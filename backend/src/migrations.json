@@ -1,0 +1,15 @@
+{
+  "prerun": "# some code here",
+  "directory": "migrations",
+  "history": "migratehistory",
+  "models": [
+    "models.chain.Chain",
+    "models.contract.Contract",
+    "models.organization.Organization",
+    "models.organization.OrganizationAdmin",
+    "models.organization.OrganizationContract",
+    "models.profile.Profile",
+    "models.transaction.Transaction",
+    "models.wallet.Wallet"
+  ]
+}

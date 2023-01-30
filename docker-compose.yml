@@ -1,0 +1,11 @@
+services:
+  backend:
+    env_file:
+      - ./backend/src/.env
+    build: ./backend
+    network_mode: host
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:8080"

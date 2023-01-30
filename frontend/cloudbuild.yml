@@ -1,0 +1,13 @@
+steps:
+  - name: 'node:16'
+    id: Build
+    timeout: 1800s
+    env:
+      - VUE_APP_BACKEND_URL=${_VUE_APP_BACKEND_URL}
+    entrypoint: sh
+    args:
+      - '-c'
+      - 'cd frontend && npm install && npm run build'
+  - name: gcr.io/cloud-builders/gsutil
+    args: ['-m', 'rsync', '-r', '-c', '-d', 'frontend/dist', 'gs://${_FE_BUCKET_NAME}']
+timeout: 1800s
